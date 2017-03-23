@@ -4,6 +4,7 @@
   "description": "Node.js SDK for qq mta (Mobile Tencent Analytics)",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "eslint ./lib ./test --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,5 +15,10 @@
   "dependencies": {
     "debug": "^2.6.3",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-guo": "^0.3.0",
+    "eslint-plugin-promise": "^3.5.0"
   }
 }
