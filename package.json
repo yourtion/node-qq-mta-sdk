@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint ./lib ./test --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "export DEBUG=mta:* && mocha -t 60000"
   },
   "keywords": [
     "MAT"
@@ -19,6 +19,7 @@
   "devDependencies": {
     "eslint": "^3.18.0",
     "eslint-config-guo": "^0.3.0",
-    "eslint-plugin-promise": "^3.5.0"
+    "eslint-plugin-promise": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
