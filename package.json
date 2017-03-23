@@ -1,0 +1,14 @@
+{
+  "name": "qq-mta",
+  "version": "0.1.0",
+  "description": "Node.js SDK for qq mta (Mobile Tencent Analytics)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MAT"
+  ],
+  "author": "Yourtion <yourtion@gmail.com>",
+  "license": "MIT"
+}
