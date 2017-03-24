@@ -6,9 +6,8 @@
   "scripts": {
     "lint": "eslint ./lib ./test --fix",
     "test": "export DEBUG=mta:* && mocha -t 60000",
-    "coverage": "istanbul cover _mocha -- -t 60000",
-    "test-coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-    "prepublish": "npm run lint && npm run test-coveralls"
+    "test-coveralls": "istanbul cover _mocha -- -t 60000",
+    "prepublish": "npm run lint && npm run test-coveralls && cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [
     "MAT"
