@@ -5,8 +5,10 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint ./lib ./test --fix",
-    "coverage": "istanbul cover _mocha -- -t 30000",
-    "test": "export DEBUG=mta:* && mocha -t 60000"
+    "test": "export DEBUG=mta:* && mocha -t 60000",
+    "test-cov": "istanbul cover _mocha -- -t 60000",
+    "test-coveralls": "npm run test-cov && cat ./coverage/lcov.info | coveralls",
+    "prepublish": "npm run lint && npm run test-coveralls"
   },
   "keywords": [
     "MAT"
@@ -18,6 +20,7 @@
     "request": "^2.81.0"
   },
   "devDependencies": {
+    "coveralls": "^2.12.0",
     "eslint": "^3.18.0",
     "eslint-config-guo": "^0.3.0",
     "eslint-plugin-promise": "^3.5.0",
