@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint ./lib ./test --fix",
+    "coverage": "istanbul cover _mocha -- -t 30000",
     "test": "export DEBUG=mta:* && mocha -t 60000"
   },
   "keywords": [
@@ -20,6 +21,7 @@
     "eslint": "^3.18.0",
     "eslint-config-guo": "^0.3.0",
     "eslint-plugin-promise": "^3.5.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
   }
 }

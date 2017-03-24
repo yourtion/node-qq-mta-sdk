@@ -19,6 +19,44 @@ describe('MTA', () => {
   const mta = new MTA({ appId: APP_ID, appKey: APP_KEY });
   const defaultOption = { idx: '10201,10202,10203', start_date: START, end_date: END };
 
+  it('Error - invalid url', () => {
+    assert.throws(() => {
+      new MTA({ appId: APP_ID, appKey: APP_KEY, url: { a: 1 }});
+    }, 'invalid url');
+  });
+
+  it('Error - invalid option timeout', () => {
+    assert.throws(() => {
+      new MTA({ appId: APP_ID, appKey: APP_KEY, timeout: '10' });
+    }, 'invalid option timeout');
+  });
+
+  it('Error - option timeout is too short! must be > 1000', () => {
+    assert.throws(() => {
+      new MTA({ appId: APP_ID, appKey: APP_KEY, timeout: 1 });
+    }, 'option timeout is too short! must be > 1000');
+  });
+
+  it('Error request', () => {
+    return mta.request('/ctr_active_anal/get_offline_data', defaultOption);
+  });
+
+  it('Error request - url', () => {
+    return new MTA({ appId: APP_ID, appKey: APP_KEY, url: 'http://127.0.0.1:1' }).request('/ctr_active_anal/get_offline_data', defaultOption)
+    .then().catch(err => {
+      assert.ok(err);
+      return Promise.resolve();
+    });
+  });
+
+  it('Error request - params', () => {
+    return mta.request('/ctr_active_anal/get_offline_data', {})
+    .then().catch(err => {
+      assert.ok(err);
+      return Promise.resolve();
+    });
+  });
+
   it('signature', () => {
     const sign = mta.signature('/ctr_active_anal/get_offline_data', defaultOption);
     assert.equal(sign, '95fdb406151deb096a89b0ae553bde02');
