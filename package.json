@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint ./lib ./test --fix",
     "test": "export DEBUG=mta:* && mocha -t 60000",
-    "test-cov": "istanbul cover _mocha -- -t 60000",
-    "test-coveralls": "npm run test-cov && cat ./coverage/lcov.info | coveralls",
+    "coverage": "istanbul cover _mocha -- -t 60000",
+    "test-coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm run lint && npm run test-coveralls"
   },
   "keywords": [
