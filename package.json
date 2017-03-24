@@ -1,6 +1,6 @@
 {
   "name": "qq-mta",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Node.js SDK for qq mta (Mobile Tencent Analytics)",
   "main": "lib/index.js",
   "scripts": {
@@ -13,6 +13,14 @@
   "keywords": [
     "MAT"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourtion/node-qq-mta-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourtion/node-qq-mta-sdk/issues"
+  },
+  "homepage": "https://github.com/yourtion/node-qq-mta-sdk#readme",
   "author": "Yourtion <yourtion@gmail.com>",
   "license": "MIT",
   "dependencies": {
