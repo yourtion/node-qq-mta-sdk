@@ -17,7 +17,7 @@ const END = '2017-03-23';
 describe('MTA', () => {
 
   const mta = new MTA({ appId: APP_ID, appKey: APP_KEY });
-  const defaultOption = { idx: '10201,10202,10203', start_date: START, end_date: END };
+  const defaultOption = { idx: [ 10201, 10202, 10203 ], start_date: START, end_date: END };
 
   it('Error - invalid url', () => {
     assert.throws(() => {
@@ -35,10 +35,6 @@ describe('MTA', () => {
     assert.throws(() => {
       new MTA({ appId: APP_ID, appKey: APP_KEY, timeout: 1 });
     }, 'option timeout is too short! must be > 1000');
-  });
-
-  it('Error request', () => {
-    return mta.request('/ctr_active_anal/get_offline_data', defaultOption);
   });
 
   it('Error request - url', () => {
@@ -60,6 +56,10 @@ describe('MTA', () => {
   it('signature', () => {
     const sign = mta.signature('/ctr_active_anal/get_offline_data', defaultOption);
     assert.equal(sign, '95fdb406151deb096a89b0ae553bde02');
+  });
+
+  it('request', () => {
+    return mta.request('/ctr_active_anal/get_offline_data', { idx: [ 10201, 10202 ], start: START, end: END });
   });
 
   it('userBasicOffline', () => {
@@ -95,7 +95,7 @@ describe('MTA', () => {
   });
 
   it('crashEnv', () => {
-    return mta.crashEnv(10502, TY, START, END);
+    return mta.crashEnv(10503, TY, START, END);
   });
 
   it('crashList - 1', () => {
