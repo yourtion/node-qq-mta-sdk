@@ -23,7 +23,7 @@
 
 # qq-mta
 
-Node.js SDK for qq mta (Mobile Tencent Analytics) 腾讯移动分析数据开放 SDK
+Node.js SDK for QQ MTA (Mobile Tencent Analytics) 腾讯移动统计数据接口API Node.js SDK
 
 ## 安装使用使用
 
@@ -32,8 +32,6 @@ $ npm install qq-mta --save
 ```
 
 ```javascript
-'use strict';
-
 const MTA = require('qq-mta');
 
 const client = new MTA({

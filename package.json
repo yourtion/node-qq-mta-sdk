@@ -1,7 +1,7 @@
 {
   "name": "qq-mta",
-  "version": "1.0.0",
-  "description": "Node.js SDK for qq mta (Mobile Tencent Analytics)",
+  "version": "1.1.0",
+  "description": "Node.js SDK for QQ mta (Mobile Tencent Analytics) 腾讯移动统计数据接口API Node.js SDK",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint ./lib ./test --fix",
@@ -10,9 +10,7 @@
     "test-coveralls": "npm run test-cov && cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm run lint && npm run test-coveralls"
   },
-  "keywords": [
-    "MAT"
-  ],
+  "keywords": [ "MAT", "qq mta", "Mobile Analytics", "MTA SDK", "腾讯移动统计数据接口" ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yourtion/node-qq-mta-sdk.git"
