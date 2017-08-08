@@ -10,7 +10,13 @@
     "test-coveralls": "npm run test-cov && cat ./coverage/lcov.info | coveralls",
     "prepublish": "npm run lint && npm run test-coveralls"
   },
-  "keywords": [ "MAT", "qq mta", "Mobile Analytics", "MTA SDK", "腾讯移动统计数据接口" ],
+  "keywords": [
+    "MAT",
+    "qq mta",
+    "Mobile Analytics",
+    "MTA SDK",
+    "腾讯移动统计数据接口"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yourtion/node-qq-mta-sdk.git"
@@ -22,7 +28,7 @@
   "author": "Yourtion <yourtion@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.6.3",
+    "debug": "^2.6.8",
     "request": "^2.81.0"
   },
   "devDependencies": {

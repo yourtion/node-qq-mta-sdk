@@ -39,18 +39,18 @@ describe('MTA', () => {
 
   it('Error request - url', () => {
     return new MTA({ appId: APP_ID, appKey: APP_KEY, url: 'http://127.0.0.1:1' }).request('/ctr_active_anal/get_offline_data', defaultOption)
-    .then().catch(err => {
-      assert.ok(err);
-      return Promise.resolve();
-    });
+      .then().catch(err => {
+        assert.ok(err);
+        return Promise.resolve();
+      });
   });
 
   it('Error request - params', () => {
     return mta.request('/ctr_active_anal/get_offline_data', {})
-    .then().catch(err => {
-      assert.ok(err);
-      return Promise.resolve();
-    });
+      .then().catch(err => {
+        assert.ok(err);
+        return Promise.resolve();
+      });
   });
 
   it('signature', () => {
