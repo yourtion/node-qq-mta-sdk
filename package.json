@@ -28,7 +28,7 @@
   "author": "Yourtion <yourtion@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.6.8",
+    "debug": "^3.0.0",
     "request": "^2.81.0"
   },
   "devDependencies": {
